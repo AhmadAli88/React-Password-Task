@@ -4,12 +4,13 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Col, Row } from 'react-bootstrap';
+
 //icons
 import { FaRegEye } from 'react-icons/fa';
 import { BiSolidHide } from 'react-icons/bi';
 
 const MyPassword = () => {
-  const [showPassword, setShowPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleUpdateState = () => {
     setShowPassword(!showPassword);
@@ -24,8 +25,8 @@ const MyPassword = () => {
 
               {showPassword ? (
                 <>
-                  <Form.Control type='password' id='password' name='password' />
-                  <BiSolidHide
+                  <Form.Control type='text' id='text' name='text' />
+                  <FaRegEye
                     size={20}
                     className='position-absolute end-0 top-50'
                     onClick={handleUpdateState}
@@ -33,8 +34,8 @@ const MyPassword = () => {
                 </>
               ) : (
                 <>
-                  <Form.Control type='text' id='text' name='text' />
-                  <FaRegEye
+                  <Form.Control type='password' id='password' name='password' />
+                  <BiSolidHide
                     size={20}
                     className='position-absolute end-0 top-50'
                     onClick={handleUpdateState}
